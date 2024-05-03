@@ -1,13 +1,18 @@
 const express = require('express');
 const router = express.Router();
+const { contato } = require('../models');
 
-router.get('/', (req, res) => {
-    res.send(`
-        Telefone: (81) 99482-0824
-        Email: luismsm2003@gmail.com
-        Linkedin: linkedin.com/in/luismsmelo
-        Github: github.com/louixpng
-    `)
+router.use(express.json());
+
+router.get('/', async(req, res) => {
+    const contatos = await contato.findAll();
+    res.json(contatos);
+})
+
+router.post('/', async(req, res) => {
+    const { telefone, email, linkedin, github, behance } = req.body;
+    await contato.create({ telefone, email, linkedin, github, behance});
+    res.send('Informações de contato adicionadas com sucesso!');
 })
 
 module.exports = router;

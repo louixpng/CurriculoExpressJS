@@ -1,5 +1,5 @@
-const contatos = (sequelize, DataTypes) => {
-    const Contatos = sequelize.define('Contatos', {
+const contato = (sequelize, DataTypes) => {
+    const Contato = sequelize.define('Contato', {
         telefone: {
             type: DataTypes.STRING
         },
@@ -19,7 +19,7 @@ const contatos = (sequelize, DataTypes) => {
         tableName: 'contatos'
     })
 
-    return Contatos;
+    return Contato;
 }
 
-module.exports = contatos;
+module.exports = contato;

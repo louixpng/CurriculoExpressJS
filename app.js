@@ -9,7 +9,7 @@ app.use('/', routers);
 sequelize.sync().then(() => {
     console.log('Conectado ao banco de dados com sucesso!')
 })//.catch(err => {
-    //console.error('Não conectou ao banco de dados :(')
+   // console.error('Não conectou ao banco de dados :(')
 //})
 
 app.listen(3000, () => {

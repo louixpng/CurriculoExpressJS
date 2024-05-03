@@ -1,13 +1,18 @@
 const express = require('express');
 const router = express.Router();
+const { hardSkill } = require('../models');
 
-router.get('/', (req, res) => {
-    res.send(`
-        Telefone: (81) 99482-0824
-        Email: luismsm2003@gmail.com
-        Linkedin: linkedin.com/in/luismsmelo
-        Github: github.com/louixpng
-    `)
+router.use(express.json());
+
+router.get('/', async(req, res) => {
+    const hardSkills = await hardSkill.findAll();
+    res.json(hardSkills);
+})
+
+router.post('/', async(req, res)=> {
+    const { ferramenta, nivel } = req.body;
+    await hardSkill.create({ferramenta, nivel});
+    res.send('Hard Skill adicionada com sucesso!');
 })
 
 module.exports = router;

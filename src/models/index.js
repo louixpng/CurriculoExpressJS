@@ -1,23 +1,23 @@
 const sequelize = require('../config/sequelize');
 const Sequelize = require('sequelize');
 
-const Contatos = require('./contatos');
+const Contato = require('./contato');
 const ExpProfissional = require('./expProfissional');
 const Formacao = require('./formacao');
-const HardSkills = require('./hardSkills');
+const HardSkill = require('./hardSkill');
 const Perfil = require('./perfil');
 
-const contatos = Contatos(sequelize, Sequelize.DataTypes);
+const contato = Contato(sequelize, Sequelize.DataTypes);
 const expProfissional = ExpProfissional(sequelize, Sequelize.DataTypes);
 const formacao = Formacao(sequelize, Sequelize.DataTypes);
-const hardSkills = HardSkills(sequelize, Sequelize.DataTypes);
+const hardSkill = HardSkill(sequelize, Sequelize.DataTypes);
 const perfil = Perfil(sequelize, Sequelize.DataTypes);
 
 const db = {
-    contatos,
+    contato,
     expProfissional,
     formacao,
-    hardSkills,
+    hardSkill,
     perfil,
     sequelize
 }

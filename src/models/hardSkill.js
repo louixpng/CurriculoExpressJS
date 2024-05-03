@@ -1,5 +1,5 @@
-const hardSkills = (sequelize, DataTypes) => {
-    const HardSkills = sequelize.define('HardSkills', {
+const hardSkill = (sequelize, DataTypes) => {
+    const HardSkill = sequelize.define('HardSkill', {
         ferramenta: {
             type: DataTypes.STRING
         },
@@ -10,7 +10,7 @@ const hardSkills = (sequelize, DataTypes) => {
         tableName: 'hardSkills'
     })
 
-    return HardSkills;
+    return HardSkill;
 }
 
-module.exports = hardSkills;
+module.exports = hardSkill;
